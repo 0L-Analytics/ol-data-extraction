@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  treeview:
+    container_name: treeview
+    build:
+      context: ./services/treeview
+      dockerfile: Dockerfile
+    volumes:
+      - 'generated_assets:/usr/src/app/assets'
+    env_file:
+      - ./services/treeview/.env
+
+volumes:
+  generated_assets:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "./assets"
