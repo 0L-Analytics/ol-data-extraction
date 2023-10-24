@@ -19,6 +19,7 @@ def get_address_parent_relations_olfyi():
     client = clickhouse_connect.get_client(
         host = Config.OLFYI_HOST,
         port = Config.OLFYI_PORT,
+        secure = True,
         username = Config.OLFYI_USERNAME,
         password = Config.OLFYI_PASSWORD,
         database = Config.OLFYI_DATABASE
